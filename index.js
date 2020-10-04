@@ -7,4 +7,4 @@ import withForm from "./HOC";
 import "./style.scss";
 
 export default Form;
-export { Input, Select, isEqual, withForm, useForm };
+export { Input, Select, isEqual, withForm };
