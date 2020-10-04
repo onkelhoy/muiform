@@ -114,8 +114,8 @@ The props that we can give the field are the following (and custom props ofc..)
 | errorMessage | _string_ or _ReactNode_ |
 
 The props recieved when using HOC
-| name | value |
-|:--|:--:|
+| name | value | description |
+|:--|:--:| :-- |
 | value | any | our value |
 | values | object | we can reference others value thought this object |
 | setValue | function(value, <name>) | to set fields value (we can also set another's value if name is provided) |
