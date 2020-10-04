@@ -1,0 +1,16 @@
+{
+  "name": "muiform",
+  "version": "1.0.0",
+  "description": "Quick and easy to use form for react, written in JS but hopefully soon converted to TS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "form",
+    "material-ui"
+  ],
+  "author": "Henry Pap",
+  "license": "ISC"
+}
