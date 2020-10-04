@@ -1,5 +1,5 @@
 {
-  "name": "muiform",
+  "name": "@henypap/muiform",
   "version": "1.0.0",
   "description": "Quick and easy to use form for react, written in JS but hopefully soon converted to TS",
   "main": "index.js",
