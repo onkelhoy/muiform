@@ -8,11 +8,13 @@ import Grid from "@material-ui/core/Grid";
 import Context from "./context";
 
 class ReactForm extends React.Component {
-  state = {
-    values: {},
-    errors: {},
-    submitted: 0,
-  };
+  constructor() {
+    state = {
+      values: {},
+      errors: {},
+      submitted: 0,
+    };
+  }
 
   submit = (e) => {
     e.preventDefault();
