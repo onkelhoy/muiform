@@ -37,7 +37,7 @@ function HOC(FieldComponent, defaultValue = null) {
     }, [submitted, isTouched]);
 
     if (hidden) {
-      restProps.className = "field-hidden";
+      restProps.className = "muiform-field-hidden";
     }
 
     function _setValue(value = _default, _name = name) {
