@@ -1,9 +1,9 @@
 import Form from "./Form";
-import { default as Input } from "./Fields/Input";
-import { default as Select } from "./Fields/Select";
-import { default as isEqual } from "./equal";
-import { default as withForm } from "./HOC";
-import { default as useForm } from "./HOOK";
+export { default as Input } from "./Fields/Input";
+export { default as Select } from "./Fields/Select";
+export { default as isEqual } from "./equal";
+export { default as withForm } from "./HOC";
+export { default as useForm } from "./HOOK";
 import "./style.scss";
 
 export default Form;

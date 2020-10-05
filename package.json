@@ -2,12 +2,11 @@
   "name": "@henrypap/muiform",
   "version": "1.0.2",
   "description": "Quick and easy to use form for react, written in JS but hopefully soon converted to TS",
-  "main": "src/index.js",
-  "dependencies": {},
+  "main": "dist/main.js",
   "files": [
     "dist"
   ],
-  "peerDependencies": {
+  "dependencies": {
     "@material-ui/core": "^4.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
