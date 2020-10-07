@@ -9,22 +9,26 @@ module.exports = {
       "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
     },
   },
-  externals: {
+  externals: [
     // Don't bundle react or react-dom
-    "@material-ui/core": "@material-ui/core",
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React",
+    /@material-ui\/core\/.*/,
+    {
+      react: {
+        commonjs: "react",
+        commonjs2: "react",
+        amd: "React",
+        root: "React",
+      },
     },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM",
+    {
+      "react-dom": {
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+        amd: "ReactDOM",
+        root: "ReactDOM",
+      },
     },
-  },
+  ],
   output: {
     library: "@henrypap/muiform",
     path: path.join(__dirname, "./dist"),
