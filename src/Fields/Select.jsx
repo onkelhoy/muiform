@@ -20,8 +20,6 @@ const SelectField = withField(
 
     return (
       <FormControl
-        margin="dense"
-        variant="outlined"
         component={Box}
         my={1}
         {...rest}

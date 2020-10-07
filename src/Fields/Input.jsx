@@ -16,8 +16,6 @@ const Input = withField(
 
     return (
       <TextField
-        variant="outlined"
-        size="small"
         component={Box}
         my={1}
         value={value || ""}
