@@ -54,6 +54,7 @@ class ReactForm extends React.Component {
   };
 
   render() {
+    const { className = "", submit, onValid, onInvalid, ...props } = this.props;
     const provides = {
       submitted: this.state.submitted,
       values: this.state.values,
@@ -63,7 +64,11 @@ class ReactForm extends React.Component {
     };
 
     return (
-      <form onSubmit={this.submit}>
+      <form
+        className={`muiform ${className}`}
+        onSubmit={this.submit}
+        {...props}
+      >
         <Context.Provider value={provides}>
           <Grid container direction="column">
             {this.props.children}

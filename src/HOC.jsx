@@ -10,6 +10,7 @@ function HOC(FieldComponent, defaultValue = null) {
     required,
     validation,
     errorMessage,
+    className = "",
     ...restProps
   }) => {
     const { name } = restProps;
@@ -35,10 +36,6 @@ function HOC(FieldComponent, defaultValue = null) {
     React.useEffect(() => {
       if (submitted > 0 && !isTouched) setTouched(true);
     }, [submitted, isTouched]);
-
-    if (hidden) {
-      restProps.className = "muiform-field-hidden";
-    }
 
     function _setValue(value = _default, _name = name) {
       if (validation) {
@@ -69,6 +66,11 @@ function HOC(FieldComponent, defaultValue = null) {
 
     // inject to input
     restProps.onFocus = onFocus;
+    restProps.className = `muiform-field ${className}`;
+
+    if (hidden) {
+      restProps.className = "muiform-field-hidden";
+    }
 
     return (
       <FieldComponent
