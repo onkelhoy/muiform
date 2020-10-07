@@ -118,10 +118,10 @@ The props recieved when using HOC
 |:--|:--:| :-- |
 | value | any | our value |
 | values | object | we can reference others value thought this object |
-| setValue | function(value, <name>) | to set fields value (we can also set another's value if name is provided) |
+| setValue | function(value, name) | to set fields value (we can also set another's value if name is provided) |
 | error | bool | |
 | errors | object | same as values but with errors |
-| setError | function(value, <name>) | works the same as _setValue_ |
+| setError | function(value, name) | works the same as _setValue_ |
 | errorMessage | _string_ or _ReactNode_ | this is null if no _error && isTouched_ |
 | isTouched | bool | |
 | required | bool | |
