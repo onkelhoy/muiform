@@ -66,8 +66,8 @@ class ReactForm extends React.Component {
     return (
       <form
         className={`muiform ${className}`}
-        onSubmit={this.submit}
         {...props}
+        onSubmit={this.submit}
       >
         <Context.Provider value={provides}>
           <Grid container direction="column">

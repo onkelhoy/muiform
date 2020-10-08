@@ -104,6 +104,12 @@ export default CustomField;
 
 ## Field props
 
+Form props (all other props are passed to html form)
+| name | value |
+| onSubmit | function |
+| onValid | function |
+| onInvalid | function |
+
 The props that we can give the field are the following (and custom props ofc..)
 | name | value |
 |:--|:--:|
