@@ -51,7 +51,7 @@ The _props_ you give to your custom-field will live inside the _"prop"_ of the _
 withForm takes 2 argument,
 
 1. component
-2. defaultValue // defaults to null
+2. defaultValue // defaults to null (global level defaultValue)
 
 ```
 import { withForm, isEqual } from "muiform";
@@ -102,7 +102,7 @@ const CustomField = withForm(
 export default CustomField;
 ```
 
-## Field props
+## Form props
 
 Form props (all other props are passed to html form)
 | name | value |
@@ -110,16 +110,20 @@ Form props (all other props are passed to html form)
 | onValid | function |
 | onInvalid | function |
 
-The props that we can give the field are the following (and custom props ofc..)
-| name | value |
-|:--|:--:|
-| value | any |
-| hidden | bool |
-| required | bool |
-| validation | _function_ or _RegExp_ |
-| errorMessage | _string_ or _ReactNode_ |
+## Field Props
 
-The props recieved when using HOC
+The props that we can give the field are the following (and custom props ofc..)
+| name | value | description |
+|:-- |:--:|:-- |
+| value | any | |
+| hidden | bool | |
+| required | bool | |
+| validation | _function_ or _RegExp_ | |
+| errorMessage | _string_ or _ReactNode_ | |
+| defaultValue | _string_ or _ReactNode_ or _function_ | overrides the defaultvalue that can be passed to component (when created) | 
+
+### The props recieved when using HOC
+
 | name | value | description |
 |:--|:--:| :-- |
 | value | any | our value |
@@ -141,7 +145,3 @@ if not then it checks if value is the same as before
 (since value could be an _array_, _object_ or plain) it does shallow checking for the first two
 
 If you have a complex Field that is referencing another field, best would be to make a new equal funciton in order to receive this change.
-
-## Known limitations
-
-for now the defaultValue is set on the component and not when component is used (for my case this was needed..)

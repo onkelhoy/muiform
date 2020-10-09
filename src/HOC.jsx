@@ -3,7 +3,7 @@ import React from "react";
 import PropType from "prop-types";
 import Context from "./context";
 
-function HOC(FieldComponent, defaultValue = null) {
+function HOC(FieldComponent, _defaultValue = null) {
   return ({
     value,
     hidden,
@@ -11,6 +11,7 @@ function HOC(FieldComponent, defaultValue = null) {
     validation,
     errorMessage,
     className = "",
+    defaultValue = _defaultValue,
     ...restProps
   }) => {
     const { name } = restProps;
