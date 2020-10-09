@@ -19,10 +19,10 @@ export default function (prevProps, nextProps) {
 }
 
 function checkObject(a, b) {
-  if (Object.keys(pa).length !== Object.keys(b).length) return false;
-  for (const key in pa) {
+  if (Object.keys(a).length !== Object.keys(b).length) return false;
+  for (const key in a) {
     if (!b[key]) return false;
-    if (pa[key] !== b[key]) return false;
+    if (a[key] !== b[key]) return false;
   }
   
   return true;
