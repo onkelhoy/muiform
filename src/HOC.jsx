@@ -38,6 +38,10 @@ function HOC(FieldComponent, _defaultValue = null) {
       if (submitted > 0 && !isTouched) setTouched(true);
     }, [submitted, isTouched]);
 
+    React.useEffect(() => {
+      if (values[name] && !isTouched) setTouched(true);
+    }, [values[name], isTouched]);
+
     function _setValue(value = _default, _name = name) {
       if (validation) {
         let isValid = true;
