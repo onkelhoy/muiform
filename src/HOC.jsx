@@ -57,6 +57,8 @@ function HOC(FieldComponent, _defaultValue = null) {
         if (!value && value !== 0 && !error) _setError(true);
         else if (error) _setError(false);
       }
+      
+      console.log('value', value)
 
       setValue(_name, value);
     }
