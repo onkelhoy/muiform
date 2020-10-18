@@ -16,6 +16,7 @@ class ReactForm extends React.Component {
 
   submit = (e) => {
     e.preventDefault();
+    console.log('MUIFORM submitted')
     let errorCount = 0;
     for (const name in this.state.errors) {
       if (this.state.errors[name]) {
