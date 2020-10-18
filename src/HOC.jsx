@@ -58,8 +58,6 @@ function HOC(FieldComponent, _defaultValue = null) {
         else if (error) _setError(false);
       }
       
-      console.log('value', value)
-
       setValue(_name, value);
     }
 
