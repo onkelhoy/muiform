@@ -12,22 +12,32 @@ class ReactForm extends React.Component {
     values: {},
     errors: {},
     submitted: 0,
+    name: `${Date.now()}${Math.random()}`
   };
 
-  submit = (e) => {
-    e.preventDefault();
-    console.log(e, e.path, e.bubbles, e.srcElement, e.target, e.type);
-    let errorCount = 0;
-    for (const name in this.state.errors) {
-      if (this.state.errors[name]) {
-        errorCount++;
-      }
+  componentDidMount() {
+    const { name } = this.props;
+    if (name) {
+      this.setState({ name });
     }
+  }
 
-    if (errorCount === 0) {
-      this.props.onSubmit(this.state.values, e);
-    } else {
-      this.setState((prev) => ({ submitted: prev.submitted + 1 }));
+  submit = (e) => {
+    if (e.srcElement && e.srcElement.name === this.name) {
+      e.preventDefault();
+      
+      let errorCount = 0;
+      for (const name in this.state.errors) {
+        if (this.state.errors[name]) {
+          errorCount++;
+        }
+      }
+  
+      if (errorCount === 0) {
+        this.props.onSubmit(this.state.values, e);
+      } else {
+        this.setState((prev) => ({ submitted: prev.submitted + 1 }));
+      }
     }
   };
 
@@ -55,7 +65,7 @@ class ReactForm extends React.Component {
   };
 
   render() {
-    const { className = "", submit, onValid, onInvalid, name=`${Date.now()}${Math.random()}`, ...props } = this.props;
+    const { className = "", submit, onValid, onInvalid, ...props } = this.props;
     const provides = {
       submitted: this.state.submitted,
       values: this.state.values,
@@ -68,7 +78,7 @@ class ReactForm extends React.Component {
       <form
         className={`muiform ${className}`}
         {...props}
-        name={name}
+        name={this.state.name}
         onSubmit={this.submit}
       >
         <Context.Provider value={provides}>
