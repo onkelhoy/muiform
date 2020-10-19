@@ -3,10 +3,10 @@ import TextField from "@material-ui/core/TextField";
 import Box from "@material-ui/core/Box";
 
 // local imports
-import withField from "../HOC";
+import withForm from "../HOC";
 import isEqual from "../equal";
 
-const Input = withField(
+const Input = withForm(
   React.memo(
     ({ value, error, errorMessage, defaultValue, setValue, props }) => {
       function handleChange(e) {

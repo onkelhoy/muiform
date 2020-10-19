@@ -7,10 +7,10 @@ import Select from "@material-ui/core/Select";
 import Box from "@material-ui/core/Box";
 
 // local imports
-import withField from "../HOC";
+import withForm from "../HOC";
 import isEqual from "../equal";
 
-const SelectField = withField(
+const SelectField = withForm(
   React.memo(({ value, error, errorMessage, setValue, props }) => {
     const { children, label, ...rest } = props;
 
@@ -24,7 +24,6 @@ const SelectField = withField(
         my={1}
         {...rest}
         error={error}
-        helperText={errorMessage}
       >
         {label && <InputLabel htmlFor={props.name}>{label}</InputLabel>}
         <Select label={label} value={value || ""} onChange={handleChange}>
