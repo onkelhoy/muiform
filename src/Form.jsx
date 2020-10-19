@@ -23,8 +23,9 @@ class ReactForm extends React.Component {
   }
 
   submit = (e) => {
+    e.preventDefault();
+    console.log(e.srcElement, e.srcElement.name, this.state.name, e)
     if (e.srcElement && e.srcElement.name === this.state.name) {
-      e.preventDefault();
       
       let errorCount = 0;
       for (const name in this.state.errors) {
