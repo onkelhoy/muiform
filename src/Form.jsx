@@ -72,12 +72,13 @@ class ReactForm extends React.Component {
 			setError: this.setError,
 			setValue: this.setValue
 		};
-
+		
 		return (
 			<form className={`muiform ${className}`} {...props} name={this.state.name} onSubmit={this.submit}>
 				<Context.Provider value={provides}>
 					<Grid container direction="column">
-						{this.props.children}
+						{typeof this.props.children === 'function' && this.props.children(this.state)}
+						{typeof this.props.children === 'object' && this.props.children}
 					</Grid>
 				</Context.Provider>
 			</form>
