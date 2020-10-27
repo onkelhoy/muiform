@@ -8,7 +8,7 @@ import isEqual from "../equal";
 
 const Input = withForm(
   React.memo(
-    ({ value, error, errorMessage, defaultValue, setValue, required, props: { label, nostar, ...rest } }) => {
+    ({ value, error, errorMessage, defaultValue, setValue, required, props: { label, nostar, ...props} }) => {
       function handleChange(e) {
         if (props.type === "number") {
           if (e.target.value === "") {
