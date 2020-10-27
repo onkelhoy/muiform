@@ -11,12 +11,14 @@ import withForm from "../HOC";
 import isEqual from "../equal";
 
 const SelectField = withForm(
-  React.memo(({ value, error, errorMessage, setValue, props }) => {
-    const { children, label, ...rest } = props;
+  React.memo(({ value, error, errorMessage, setValue, required, props }) => {
+    let { children, label, nostar, ...rest } = props;
 
     function handleChange(e) {
       setValue(e.target.value);
     }
+
+    if (required && !nostar) label = `${label} *`;
 
     return (
       <FormControl
