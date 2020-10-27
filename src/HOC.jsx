@@ -46,7 +46,7 @@ function HOC(FieldComponent, _defaultValue = null) {
       if (validation) {
         let isValid = true;
         if (validation instanceof Function) {
-          isValid = validation(value);
+          isValid = validation(value, values);
         } else if (validation instanceof RegExp) {
           isValid = validation.test(value);
         }
