@@ -19,7 +19,6 @@ const Input = withForm(
           }
         } else setValue(e.target.value);
       }
-      const 
 
       if (required && !nostar) label = `${label} *`;
 
