@@ -11,6 +11,7 @@ class ReactForm extends React.Component {
 	state = {
 		values: {},
 		errors: {},
+		reset: 0,
 		submitted: 0,
 		name: `${Date.now()}${Math.random()}`
 	};
@@ -34,6 +35,7 @@ class ReactForm extends React.Component {
 
 			if (errorCount === 0) {
 				this.props.onSubmit(this.state.values, e);
+				this.setState(prev => ({ reset: prev.reset + 1 }))
 			} else {
 				this.setState(prev => ({ submitted: prev.submitted + 1 }));
 			}
@@ -69,8 +71,9 @@ class ReactForm extends React.Component {
 			submitted: this.state.submitted,
 			values: this.state.values,
 			errors: this.state.errors,
+			reset: this.state.reset,
 			setError: this.setError,
-			setValue: this.setValue
+			setValue: this.setValue,
 		};
 		
 		return (

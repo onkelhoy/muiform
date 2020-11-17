@@ -15,7 +15,7 @@ function HOC(FieldComponent, _defaultValue = null) {
     ...restProps
   }) => {
     const { name } = restProps;
-    const { values, setValue, setError, errors, submitted } = React.useContext(
+    const { values, setValue, setError, errors, submitted, reset } = React.useContext(
       Context
     );
     const [isTouched, setTouched] = React.useState(false);
@@ -41,6 +41,10 @@ function HOC(FieldComponent, _defaultValue = null) {
     React.useEffect(() => {
       if (values[name] && !isTouched) setTouched(true);
     }, [values[name], isTouched]);
+
+    React.useEffect(() => {
+      setTouched(false);
+    }, [reset])
 
     function _setValue(value = _default, _name = name) {
       if (validation) {
