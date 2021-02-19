@@ -15,10 +15,7 @@ const SelectField = withForm(
     let { children, label, nostar, multiple, ...rest } = props;
 
     function handleChange(e) {
-      if (multiple) {
-				if (!(value instanceof Array)) value = [];
-				setValue(value.concat(e.target.value));
-			} else setValue(e.target.value);
+      setValue(e.target.value);
     }
 
     if (required && !nostar) label = `${label} *`;
