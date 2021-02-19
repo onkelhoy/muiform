@@ -12,7 +12,7 @@ import isEqual from "../equal";
 
 const SelectField = withForm(
   React.memo(({ value, error, errorMessage, setValue, required, props }) => {
-    let { children, label, nostar, ...rest } = props;
+    let { children, label, nostar, selectProps = {}, ...rest } = props;
 
     function handleChange(e) {
       setValue(e.target.value);
@@ -28,7 +28,7 @@ const SelectField = withForm(
         error={error}
       >
         {label && <InputLabel htmlFor={props.name}>{label}</InputLabel>}
-        <Select label={label} value={value || ""} onChange={handleChange}>
+        <Select {...selectProps} label={label} value={value || ""} onChange={handleChange}>
           {children}
         </Select>
         {Boolean(errorMessage) && (

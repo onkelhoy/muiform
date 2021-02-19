@@ -33,6 +33,7 @@ class ReactForm extends React.Component {
 				}
 			}
 
+
 			if (errorCount === 0) {
 				this.props.onSubmit(this.state.values, e);
 				this.setState(prev => ({ reset: prev.reset + 1 }))
