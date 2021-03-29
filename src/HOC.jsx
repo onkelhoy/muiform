@@ -83,6 +83,7 @@ function HOC(FieldComponent, _defaultValue = null) {
     }
 
     let parentDisabled = false;
+    console.log(typeof values[parent]?.value, values[parent]?.value);
 		if (parent && values[parent]?.value !== 'true') {
 			disabled = true;
 		}
