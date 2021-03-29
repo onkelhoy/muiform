@@ -8,7 +8,7 @@ import MuiCheckbox from '@material-ui/core/Checkbox';
 import withForm from "../HOC";
 import isEqual from "../equal";
 
-const Checkbox = ({ value, setValue, required, props: { name, nostar, label, ...rest } }) => {
+const Checkbox = ({ parentDisabled, value, setValue, required, props: { name, nostar, label, ...rest } }) => {
 	function handleChange(e) {
 		setValue(e.target.checked);
 	}
@@ -16,7 +16,10 @@ const Checkbox = ({ value, setValue, required, props: { name, nostar, label, ...
 	if (required && !nostar) label = `${label} *`;
 
 	return (
-		<FormControl name={name} style={{ display: 'inline-block' }}>
+		<FormControl 
+
+		disabled={parentDisabled}
+		name={name} style={{ display: 'inline-block' }}>
 			<FormControlLabel {...rest} label={label} onChange={handleChange} control={<MuiCheckbox checked={!!value} color="primary" />} />
 		</FormControl>
 	);

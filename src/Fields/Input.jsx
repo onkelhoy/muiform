@@ -8,7 +8,12 @@ import isEqual from "../equal";
 
 const Input = withForm(
   React.memo(
-    ({ value, error, errorMessage, defaultValue, setValue, required, props: { label, nostar, ...props} }) => {
+    ({ 
+      value, parentDisabled, error, 
+      errorMessage, defaultValue, 
+      setValue, required, 
+      props: { label, nostar, ...props} 
+    }) => {
       function handleChange(e) {
         if (props.type === "number") {
           if (e.target.value === "") {
@@ -25,6 +30,7 @@ const Input = withForm(
       return (
         <TextField
           component={Box}
+          disabled={parentDisabled}
           my={1}
           value={value || ""}
           {...props}

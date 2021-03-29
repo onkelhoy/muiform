@@ -11,7 +11,7 @@ import withForm from "../HOC";
 import isEqual from "../equal";
 
 const SelectField = withForm(
-  React.memo(({ value, error, errorMessage, setValue, required, props }) => {
+  React.memo(({ value, parentDisabled, error, errorMessage, setValue, required, props }) => {
     let { children, label, nostar, multiple, ...rest } = props;
 
     function handleChange(e) {
@@ -23,6 +23,7 @@ const SelectField = withForm(
     return (
       <FormControl
         component={Box}
+        disabled={parentDisabled}
         my={1}
         {...rest}
         error={error}
