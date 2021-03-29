@@ -11,6 +11,7 @@ function HOC(FieldComponent, _defaultValue = null) {
     validation,
     errorMessage,
     className = "",
+    parent,
     defaultValue = _defaultValue,
     ...restProps
   }) => {
@@ -81,11 +82,17 @@ function HOC(FieldComponent, _defaultValue = null) {
       restProps.className = "muiform-field-hidden";
     }
 
+    let parentDisabled = false;
+		if (parent && values[parent]?.value !== 'true') {
+			disabled = true;
+		}
+
     return (
       <FieldComponent
         setValue={_setValue}
         value={values[name] || _default}
         values={values}
+        parentDisabled={parentDisabled}
         errorMessage={isTouched && error ? errorMessage : null}
         required={required}
         validation={validation}
