@@ -1,6 +1,6 @@
 {
   "name": "@henrypap/muiform",
-  "version": "1.1.35",
+  "version": "1.1.36",
   "description": "Quick and easy to use form for react, written in JS but hopefully soon converted to TS",
   "main": "dist/index.js",
   "files": [
